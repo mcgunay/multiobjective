@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="monsel-master"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ubuntu/workspace/MO-monsel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ubuntu/workspace/MO-monsel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monsel-master">
+				<Option output="/home/ubuntu/workspace/MO-monsel/cmake-build-debug/monsel-master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ubuntu/workspace/MO-monsel/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ubuntu/workspace/MO-monsel/CMAKE_CURRENT_SOURCE_DIR"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 monsel-master"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monsel-master/fast">
+				<Option output="/home/ubuntu/workspace/MO-monsel/cmake-build-debug/monsel-master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ubuntu/workspace/MO-monsel/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ubuntu/workspace/MO-monsel/CMAKE_CURRENT_SOURCE_DIR"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 monsel-master/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ubuntu/workspace/MO-monsel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ubuntu/workspace/MO-monsel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/func-con.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/keepaliven.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/logging.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/main.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/monsel.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/monsel.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/ranking.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/tuning.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/utils.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,1 @@
+/usr/bin/gcc-7 -g   CMakeFiles/monsel-master.dir/monsel.c.o CMakeFiles/monsel-master.dir/main.c.o CMakeFiles/monsel-master.dir/tuning.c.o  -o monsel-master -lm 
