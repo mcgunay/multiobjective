@@ -16,94 +16,21 @@
 
 // typedefs and structs
 
-typedef struct FitnessWrite {
-    Fitness fitness;
-    unsigned long active_ecount;
-    unsigned long active_ecount_w;
-    unsigned long u_edges;
-    unsigned long u_edges_w;
-    unsigned long active_vcount;
-    unsigned long moncount;
-} FitnessWrite;
 
-typedef struct GenerationData {
-    double mean_edges;
-    double std_edges;
-    double mean_edges_w;
-    double std_edges_w;
-    double mean_moncount;
-    double std_moncount;
-} GenerationData;
 
-typedef struct Vertex {
-    unsigned long id;
-    uint8_t active;
-} Vertex;
-
-typedef struct Edge {
-    unsigned long src;
-    unsigned long dst;
-    uint8_t w;
-    uint8_t active;
-} Edge;
-
-typedef struct AdjacencyList {
-    unsigned long* edge_indices;
-    unsigned int size;
-} AdjacencyList;
-
-typedef struct NetworkModel {
-    unsigned long id;
-    Edge *edges;
-    Vertex *vertices;
-    unsigned long ecount;
-    unsigned long ecount_w;
-    unsigned long active_ecount;
-    unsigned long active_ecount_w;
-    int *active_edge_idx;
-    unsigned long vcount;
-    unsigned long active_vcount;
-    int *active_vertex_idx;
-    AdjacencyList* adjlist;
-} NetworkModel;
-
-typedef struct Individual {
-    Gene *values;
-    unsigned long size;
-    Fitness fitness;
-    //Multi-Objective
-    double constr_violation;
-    int rank;//rank for pareto front
-    double *xbin; //corresponds to monitor count to minimize
-    double *obj;
-    double crowd_dist;
-} Individual;
-
-typedef struct Population {
-    Individual* ind;
-    unsigned long size;
-    unsigned long _memsize;
-} Population;
-
-typedef struct Diversity {
-    double *values;
-    long next;
-    long _memsize;
-} Diversity;
-
-typedef struct lists
-{
-    int index;
-    struct lists *parent;
-    struct lists *child;
-}
-        list;
 // HEADER
 
 Fitness fitness(Individual *ind, NetworkModel *model);
 
-#include "ranking.h"
-#include "keepaliven.h"
+int nreal;
+int nbin;
+int nobj;
+int ncon;
+int popsize;
+int *nbits;
+double *min_binvar;
+double *max_binvar;
+
 #include "global.h"
 // functions
 
@@ -495,6 +422,9 @@ FitnessWrite fitness_ext(Individual *ind, NetworkModel *model)
     retval.active_vcount = model->active_vcount;
     retval.active_ecount = model->active_ecount;
     retval.active_ecount_w = model->active_ecount_w;
+
+    ind->obj[0] = retval.moncount;
+    ind->obj[1] = retval.u_edges_w;
     return retval;
 }
 
@@ -538,6 +468,7 @@ void create_null_individual(Individual *ind, int size)
     }
     ind->size = size;
     ind->fitness = -1;
+    ind->obj = (double *)malloc(nobj*sizeof(double));
 }
 
 /*
@@ -552,6 +483,7 @@ void create_random_individual(Individual *ind, int size)
     }
     ind->size = size;
     ind->fitness = -1;
+    ind->obj = (double *)malloc(nobj*sizeof(double));
 }
 
 /*
@@ -1028,6 +960,17 @@ long localsearch(
 Fitness run_default(struct ea_parameters* params)
 {
     long nevals = 0;
+
+    //initialize global parameter for problem specific
+    nreal = 0;
+    nbin = 1;
+    nobj = 2;
+    ncon = 0;
+    popsize = params->popsize;
+    nbits = (int *)malloc(nbin*sizeof(int));
+    min_binvar = (double *)malloc(nbin*sizeof(double));
+    max_binvar = (double *)malloc(nbin*sizeof(double));
+
     long change_countdown = (long)(params->max_evals / params->modelcount) + 1;
     NetworkModel model;
     if(read_base_file(&model, params->inputfname) == -1)
@@ -1053,6 +996,7 @@ Fitness run_default(struct ea_parameters* params)
         printf("Read file '%s' having |V| = %ld (%ld active), |E| = %ld (%ld active) @ %d evals\n", params->inputfname, model.vcount, model.active_vcount, model.ecount, model.active_ecount, 0);
     }
     variables_param_to_global(params);
+    nbits[0] = model.vcount; //TODO check if this is true
     FitnessWrite *fitvals = malloc(sizeof(FitnessWrite) * params->max_evals);
     GenerationData* gendata = NULL;
     long gendatacount = 0;
@@ -1078,6 +1022,9 @@ Fitness run_default(struct ea_parameters* params)
                 &change_countdown, &model, params, &nevals,
                 &pop, gendata, &gendatacount, fitvals);
         fitvals[nevals++] = fitness_ext(&pop.ind[i], &model);
+        //Fill objective values
+
+
     }
     // Variables for PI
     Diversity diversity;
@@ -1164,7 +1111,7 @@ Fitness run_default(struct ea_parameters* params)
         //
         //*************************************************************
 
-        fill_nondominated_sort(pop.ind);
+        fill_nondominated_sort(&pop);
 
         // Determine survivor indices using selection operation.
         // The survivors are moved to the front of the population,

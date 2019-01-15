@@ -126,6 +126,141 @@ monsel-master/fast:
 	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/build
 .PHONY : monsel-master/fast
 
+allocate.o: allocate.c.o
+
+.PHONY : allocate.o
+
+# target to build an object file
+allocate.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/allocate.c.o
+.PHONY : allocate.c.o
+
+allocate.i: allocate.c.i
+
+.PHONY : allocate.i
+
+# target to preprocess a source file
+allocate.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/allocate.c.i
+.PHONY : allocate.c.i
+
+allocate.s: allocate.c.s
+
+.PHONY : allocate.s
+
+# target to generate assembly for a file
+allocate.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/allocate.c.s
+.PHONY : allocate.c.s
+
+crowddist.o: crowddist.c.o
+
+.PHONY : crowddist.o
+
+# target to build an object file
+crowddist.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/crowddist.c.o
+.PHONY : crowddist.c.o
+
+crowddist.i: crowddist.c.i
+
+.PHONY : crowddist.i
+
+# target to preprocess a source file
+crowddist.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/crowddist.c.i
+.PHONY : crowddist.c.i
+
+crowddist.s: crowddist.c.s
+
+.PHONY : crowddist.s
+
+# target to generate assembly for a file
+crowddist.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/crowddist.c.s
+.PHONY : crowddist.c.s
+
+dominance.o: dominance.c.o
+
+.PHONY : dominance.o
+
+# target to build an object file
+dominance.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/dominance.c.o
+.PHONY : dominance.c.o
+
+dominance.i: dominance.c.i
+
+.PHONY : dominance.i
+
+# target to preprocess a source file
+dominance.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/dominance.c.i
+.PHONY : dominance.c.i
+
+dominance.s: dominance.c.s
+
+.PHONY : dominance.s
+
+# target to generate assembly for a file
+dominance.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/dominance.c.s
+.PHONY : dominance.c.s
+
+fillnds.o: fillnds.c.o
+
+.PHONY : fillnds.o
+
+# target to build an object file
+fillnds.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/fillnds.c.o
+.PHONY : fillnds.c.o
+
+fillnds.i: fillnds.c.i
+
+.PHONY : fillnds.i
+
+# target to preprocess a source file
+fillnds.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/fillnds.c.i
+.PHONY : fillnds.c.i
+
+fillnds.s: fillnds.c.s
+
+.PHONY : fillnds.s
+
+# target to generate assembly for a file
+fillnds.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/fillnds.c.s
+.PHONY : fillnds.c.s
+
+list.o: list.c.o
+
+.PHONY : list.o
+
+# target to build an object file
+list.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/list.c.o
+.PHONY : list.c.o
+
+list.i: list.c.i
+
+.PHONY : list.i
+
+# target to preprocess a source file
+list.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/list.c.i
+.PHONY : list.c.i
+
+list.s: list.c.s
+
+.PHONY : list.s
+
+# target to generate assembly for a file
+list.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/list.c.s
+.PHONY : list.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -153,6 +288,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/main.c.s
 .PHONY : main.c.s
 
+merge.o: merge.c.o
+
+.PHONY : merge.o
+
+# target to build an object file
+merge.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/merge.c.o
+.PHONY : merge.c.o
+
+merge.i: merge.c.i
+
+.PHONY : merge.i
+
+# target to preprocess a source file
+merge.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/merge.c.i
+.PHONY : merge.c.i
+
+merge.s: merge.c.s
+
+.PHONY : merge.s
+
+# target to generate assembly for a file
+merge.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/merge.c.s
+.PHONY : merge.c.s
+
 monsel.o: monsel.c.o
 
 .PHONY : monsel.o
@@ -179,6 +341,60 @@ monsel.s: monsel.c.s
 monsel.c.s:
 	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/monsel.c.s
 .PHONY : monsel.c.s
+
+rand.o: rand.c.o
+
+.PHONY : rand.o
+
+# target to build an object file
+rand.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/rand.c.o
+.PHONY : rand.c.o
+
+rand.i: rand.c.i
+
+.PHONY : rand.i
+
+# target to preprocess a source file
+rand.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/rand.c.i
+.PHONY : rand.c.i
+
+rand.s: rand.c.s
+
+.PHONY : rand.s
+
+# target to generate assembly for a file
+rand.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/rand.c.s
+.PHONY : rand.c.s
+
+sort.o: sort.c.o
+
+.PHONY : sort.o
+
+# target to build an object file
+sort.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/sort.c.o
+.PHONY : sort.c.o
+
+sort.i: sort.c.i
+
+.PHONY : sort.i
+
+# target to preprocess a source file
+sort.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/sort.c.i
+.PHONY : sort.c.i
+
+sort.s: sort.c.s
+
+.PHONY : sort.s
+
+# target to generate assembly for a file
+sort.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/sort.c.s
+.PHONY : sort.c.s
 
 tuning.o: tuning.c.o
 
@@ -216,12 +432,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... monsel-master"
 	@echo "... edit_cache"
+	@echo "... allocate.o"
+	@echo "... allocate.i"
+	@echo "... allocate.s"
+	@echo "... crowddist.o"
+	@echo "... crowddist.i"
+	@echo "... crowddist.s"
+	@echo "... dominance.o"
+	@echo "... dominance.i"
+	@echo "... dominance.s"
+	@echo "... fillnds.o"
+	@echo "... fillnds.i"
+	@echo "... fillnds.s"
+	@echo "... list.o"
+	@echo "... list.i"
+	@echo "... list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... merge.o"
+	@echo "... merge.i"
+	@echo "... merge.s"
 	@echo "... monsel.o"
 	@echo "... monsel.i"
 	@echo "... monsel.s"
+	@echo "... rand.o"
+	@echo "... rand.i"
+	@echo "... rand.s"
+	@echo "... sort.o"
+	@echo "... sort.i"
+	@echo "... sort.s"
 	@echo "... tuning.o"
 	@echo "... tuning.i"
 	@echo "... tuning.s"

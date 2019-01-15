@@ -13,7 +13,7 @@
    -1 if b dominates a
    0 if both a and b are non-dominated */
 
-int check_dominance (individual *a, individual *b)
+int check_dominance (Individual *a, Individual *b)
 {
     int i;
     int flag1;

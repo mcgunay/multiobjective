@@ -86,10 +86,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ubuntu/workspace/MO-monsel/func-con.h">
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/allocate.c">
 			<Option target="monsel-master"/>
 		</Unit>
-		<Unit filename="/home/ubuntu/workspace/MO-monsel/keepaliven.h">
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/crowddist.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/dominance.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/fillnds.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/global.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/list.c">
 			<Option target="monsel-master"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/logging.h">
@@ -98,13 +110,22 @@
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/main.c">
 			<Option target="monsel-master"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/merge.c">
+			<Option target="monsel-master"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/monsel.c">
 			<Option target="monsel-master"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/monsel.h">
 			<Option target="monsel-master"/>
 		</Unit>
-		<Unit filename="/home/ubuntu/workspace/MO-monsel/ranking.h">
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/rand.c">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/rand.h">
+			<Option target="monsel-master"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/sort.c">
 			<Option target="monsel-master"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/tuning.c">

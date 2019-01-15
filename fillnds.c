@@ -32,8 +32,8 @@ void fill_nondominated_sort (Population *mixed_pop)
     temp1 = pool;
 
     //allocate memory for next generation
-    Population * parent_pop = (Population *)malloc(sizeof(Population));
-    allocate_memory_pop (parent_pop, popsize);
+    Population * new_pop = (Population *)malloc(sizeof(Population));
+    allocate_memory_pop (new_pop, popsize);
 
 
     for (i=0; i<2*popsize; i++)
@@ -135,12 +135,12 @@ void fill_nondominated_sort (Population *mixed_pop)
     }
     //TODO test it
     deallocate_memory_pop(mixed_pop, popsize*2);
-    *mixed_pop = *parent_pop;
+    *mixed_pop = *new_pop;
     return;
 }
 
 /* Routine to fill a population with individuals in the decreasing order of crowding distance */
-void crowding_fill (population *mixed_pop, population *new_pop, int count, int front_size, list *elite)
+void crowding_fill (Population *mixed_pop, Population *new_pop, int count, int front_size, list *elite)
 {
     int *dist;
     list *temp;

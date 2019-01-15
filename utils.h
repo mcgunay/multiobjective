@@ -97,7 +97,6 @@ static inline int contains(int *array, int size, int value)
 
 static inline int variables_param_to_global(struct ea_parameters* params){
 
-    nbin = 1;
-    popsize = params->popsize;
+
     //TODO fill the rest
 }
