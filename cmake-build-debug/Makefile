@@ -369,6 +369,33 @@ rand.c.s:
 	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/rand.c.s
 .PHONY : rand.c.s
 
+report.o: report.c.o
+
+.PHONY : report.o
+
+# target to build an object file
+report.c.o:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/report.c.o
+.PHONY : report.c.o
+
+report.i: report.c.i
+
+.PHONY : report.i
+
+# target to preprocess a source file
+report.c.i:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/report.c.i
+.PHONY : report.c.i
+
+report.s: report.c.s
+
+.PHONY : report.s
+
+# target to generate assembly for a file
+report.c.s:
+	$(MAKE) -f CMakeFiles/monsel-master.dir/build.make CMakeFiles/monsel-master.dir/report.c.s
+.PHONY : report.c.s
+
 sort.o: sort.c.o
 
 .PHONY : sort.o
@@ -459,6 +486,9 @@ help:
 	@echo "... rand.o"
 	@echo "... rand.i"
 	@echo "... rand.s"
+	@echo "... report.o"
+	@echo "... report.i"
+	@echo "... report.s"
 	@echo "... sort.o"
 	@echo "... sort.i"
 	@echo "... sort.s"

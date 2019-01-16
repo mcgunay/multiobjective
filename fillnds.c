@@ -3,6 +3,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+#include <string.h>
 
 # include "global.h"
 # include "rand.h"
@@ -134,10 +135,17 @@ void fill_nondominated_sort (Population *mixed_pop)
         free (temp1);
     }
     //TODO test it
-    deallocate_memory_pop(mixed_pop, popsize*2);
-    *mixed_pop = *new_pop;
+    for (int k = 0; k < popsize; ++k) {
+        copy_ind(&new_pop->ind[k], &mixed_pop->ind[k]);
+    }
+    for (int l = popsize; l < 2*popsize; ++l) {
+        deallocate_memory_ind(&mixed_pop->ind[l]);
+    }
+
+    mixed_pop->size = popsize;
     return;
 }
+
 
 /* Routine to fill a population with individuals in the decreasing order of crowding distance */
 void crowding_fill (Population *mixed_pop, Population *new_pop, int count, int front_size, list *elite)

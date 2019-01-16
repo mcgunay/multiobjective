@@ -125,6 +125,9 @@
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/rand.h">
 			<Option target="monsel-master"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/workspace/MO-monsel/report.c">
+			<Option target="monsel-master"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/workspace/MO-monsel/sort.c">
 			<Option target="monsel-master"/>
 		</Unit>

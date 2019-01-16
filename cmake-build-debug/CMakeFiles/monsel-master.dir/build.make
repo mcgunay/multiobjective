@@ -112,9 +112,22 @@ CMakeFiles/monsel-master.dir/rand.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/monsel-master.dir/rand.c.s"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/workspace/MO-monsel/rand.c -o CMakeFiles/monsel-master.dir/rand.c.s
 
+CMakeFiles/monsel-master.dir/report.c.o: CMakeFiles/monsel-master.dir/flags.make
+CMakeFiles/monsel-master.dir/report.c.o: ../report.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/monsel-master.dir/report.c.o"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/report.c.o   -c /home/ubuntu/workspace/MO-monsel/report.c
+
+CMakeFiles/monsel-master.dir/report.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/monsel-master.dir/report.c.i"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/workspace/MO-monsel/report.c > CMakeFiles/monsel-master.dir/report.c.i
+
+CMakeFiles/monsel-master.dir/report.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/monsel-master.dir/report.c.s"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/workspace/MO-monsel/report.c -o CMakeFiles/monsel-master.dir/report.c.s
+
 CMakeFiles/monsel-master.dir/fillnds.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/fillnds.c.o: ../fillnds.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/monsel-master.dir/fillnds.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/monsel-master.dir/fillnds.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/fillnds.c.o   -c /home/ubuntu/workspace/MO-monsel/fillnds.c
 
 CMakeFiles/monsel-master.dir/fillnds.c.i: cmake_force
@@ -127,7 +140,7 @@ CMakeFiles/monsel-master.dir/fillnds.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/allocate.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/allocate.c.o: ../allocate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/monsel-master.dir/allocate.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/monsel-master.dir/allocate.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/allocate.c.o   -c /home/ubuntu/workspace/MO-monsel/allocate.c
 
 CMakeFiles/monsel-master.dir/allocate.c.i: cmake_force
@@ -140,7 +153,7 @@ CMakeFiles/monsel-master.dir/allocate.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/list.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/list.c.o: ../list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/monsel-master.dir/list.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/monsel-master.dir/list.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/list.c.o   -c /home/ubuntu/workspace/MO-monsel/list.c
 
 CMakeFiles/monsel-master.dir/list.c.i: cmake_force
@@ -153,7 +166,7 @@ CMakeFiles/monsel-master.dir/list.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/dominance.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/dominance.c.o: ../dominance.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/monsel-master.dir/dominance.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/monsel-master.dir/dominance.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/dominance.c.o   -c /home/ubuntu/workspace/MO-monsel/dominance.c
 
 CMakeFiles/monsel-master.dir/dominance.c.i: cmake_force
@@ -166,7 +179,7 @@ CMakeFiles/monsel-master.dir/dominance.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/crowddist.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/crowddist.c.o: ../crowddist.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/monsel-master.dir/crowddist.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/monsel-master.dir/crowddist.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/crowddist.c.o   -c /home/ubuntu/workspace/MO-monsel/crowddist.c
 
 CMakeFiles/monsel-master.dir/crowddist.c.i: cmake_force
@@ -179,7 +192,7 @@ CMakeFiles/monsel-master.dir/crowddist.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/main.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/monsel-master.dir/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/monsel-master.dir/main.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/main.c.o   -c /home/ubuntu/workspace/MO-monsel/main.c
 
 CMakeFiles/monsel-master.dir/main.c.i: cmake_force
@@ -192,7 +205,7 @@ CMakeFiles/monsel-master.dir/main.c.s: cmake_force
 
 CMakeFiles/monsel-master.dir/tuning.c.o: CMakeFiles/monsel-master.dir/flags.make
 CMakeFiles/monsel-master.dir/tuning.c.o: ../tuning.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/monsel-master.dir/tuning.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/monsel-master.dir/tuning.c.o"
 	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/monsel-master.dir/tuning.c.o   -c /home/ubuntu/workspace/MO-monsel/tuning.c
 
 CMakeFiles/monsel-master.dir/tuning.c.i: cmake_force
@@ -209,6 +222,7 @@ monsel__master_OBJECTS = \
 "CMakeFiles/monsel-master.dir/merge.c.o" \
 "CMakeFiles/monsel-master.dir/sort.c.o" \
 "CMakeFiles/monsel-master.dir/rand.c.o" \
+"CMakeFiles/monsel-master.dir/report.c.o" \
 "CMakeFiles/monsel-master.dir/fillnds.c.o" \
 "CMakeFiles/monsel-master.dir/allocate.c.o" \
 "CMakeFiles/monsel-master.dir/list.c.o" \
@@ -224,6 +238,7 @@ monsel-master: CMakeFiles/monsel-master.dir/monsel.c.o
 monsel-master: CMakeFiles/monsel-master.dir/merge.c.o
 monsel-master: CMakeFiles/monsel-master.dir/sort.c.o
 monsel-master: CMakeFiles/monsel-master.dir/rand.c.o
+monsel-master: CMakeFiles/monsel-master.dir/report.c.o
 monsel-master: CMakeFiles/monsel-master.dir/fillnds.c.o
 monsel-master: CMakeFiles/monsel-master.dir/allocate.c.o
 monsel-master: CMakeFiles/monsel-master.dir/list.c.o
@@ -233,7 +248,7 @@ monsel-master: CMakeFiles/monsel-master.dir/main.c.o
 monsel-master: CMakeFiles/monsel-master.dir/tuning.c.o
 monsel-master: CMakeFiles/monsel-master.dir/build.make
 monsel-master: CMakeFiles/monsel-master.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable monsel-master"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/workspace/MO-monsel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable monsel-master"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monsel-master.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

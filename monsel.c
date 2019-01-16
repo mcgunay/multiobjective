@@ -32,6 +32,7 @@ double *min_binvar;
 double *max_binvar;
 
 #include "global.h"
+#include "rand.h"
 // functions
 
 /*
@@ -461,14 +462,14 @@ Fitness fitness_covered_edges(Individual *ind, NetworkModel *model)
  */
 void create_null_individual(Individual *ind, int size)
 {
-    ind->values = malloc(sizeof(Gene) * size);
+    ind->values = calloc(sizeof(Gene) , size);
     for(int i=0; i<size; i++)
     {
         ind->values[i] = 0;
     }
     ind->size = size;
     ind->fitness = -1;
-    ind->obj = (double *)malloc(nobj*sizeof(double));
+    ind->obj = (double *)calloc(nobj,sizeof(double));
 }
 
 /*
@@ -476,14 +477,14 @@ void create_null_individual(Individual *ind, int size)
  */
 void create_random_individual(Individual *ind, int size)
 {
-    ind->values = malloc(sizeof(Gene) * size);
+    ind->values = calloc(sizeof(Gene) , size);
     for(int i=0; i<size; i++)
     {
         ind->values[i] = rand() % 2;
     }
     ind->size = size;
     ind->fitness = -1;
-    ind->obj = (double *)malloc(nobj*sizeof(double));
+    ind->obj = (double *)calloc(nobj,sizeof(double));
 }
 
 /*
@@ -643,9 +644,30 @@ int tournament_selection(Individual* pop, int popsize, int tournsize)
     int best = rand() % popsize;
     for(int i=1; i<tournsize; i++)
     {
+        int flag;
         int choice = rand() % popsize;
-        if(pop[choice].fitness < pop[best].fitness)
-            best = choice;
+        flag = check_dominance (&pop[choice], &pop[best]);
+
+        if (flag==-1)
+        {
+            return (best);
+        }
+        if (pop[choice].crowd_dist > pop[best].crowd_dist)
+        {
+            return(choice);
+        }
+        if (pop[best].crowd_dist > pop[choice].crowd_dist)
+        {
+            return(best);
+        }
+        if ((randomperc()) <= 0.5)
+        {
+            return(choice);
+        }
+        else
+        {
+            return(best);
+        }
     }
     return best;
 }
@@ -968,8 +990,11 @@ Fitness run_default(struct ea_parameters* params)
     ncon = 0;
     popsize = params->popsize;
     nbits = (int *)malloc(nbin*sizeof(int));
-    min_binvar = (double *)malloc(nbin*sizeof(double));
-    max_binvar = (double *)malloc(nbin*sizeof(double));
+    min_binvar = (double *)calloc(nbin,sizeof(double));
+    max_binvar = (double *)calloc(nbin,sizeof(double));
+
+    FILE *fpt3;
+    fpt3 = fopen("best_pop.out","w");
 
     long change_countdown = (long)(params->max_evals / params->modelcount) + 1;
     NetworkModel model;
@@ -997,11 +1022,11 @@ Fitness run_default(struct ea_parameters* params)
     }
     variables_param_to_global(params);
     nbits[0] = model.vcount; //TODO check if this is true
-    FitnessWrite *fitvals = malloc(sizeof(FitnessWrite) * params->max_evals);
+    FitnessWrite *fitvals = calloc(sizeof(FitnessWrite) , params->max_evals);
     GenerationData* gendata = NULL;
     long gendatacount = 0;
     if(params->genfname)
-        gendata = malloc(sizeof(GenerationData) * params->max_evals);
+        gendata = calloc(sizeof(GenerationData) , params->max_evals);
     Population pop;
     pop._memsize = params->popsize + params->popsize + params->pi_size + 1;
     pop.size = 0;
@@ -1053,17 +1078,17 @@ Fitness run_default(struct ea_parameters* params)
         current_generation++;
         injected = 0;
         ls_nevals = 0;
-
+//TODO Implement a local search if needed
         // local search
-        if(params->do_localsearch)
-        {
-            if(nevals >= params->max_evals)
-                goto FINAL_REPORT;
-            long idx = best_individual_idx(&pop);
-            ls_nevals = nevals;
-            nevals = localsearch(&pop.ind[idx], &pop, &model, fitvals, gendata, &gendatacount, &nevals, params, &change_countdown);
-            ls_nevals = nevals - ls_nevals;
-        }
+//        if(params->do_localsearch)
+//        {
+//            if(nevals >= params->max_evals)
+//                goto FINAL_REPORT;
+//            long idx = best_individual_idx(&pop);
+//            ls_nevals = nevals;
+//            nevals = localsearch(&pop.ind[idx], &pop, &model, fitvals, gendata, &gendatacount, &nevals, params, &change_countdown);
+//            ls_nevals = nevals - ls_nevals;
+//        }
         if(params->ls_only)
         {
             if(params->verbose) 
@@ -1111,21 +1136,21 @@ Fitness run_default(struct ea_parameters* params)
         //
         //*************************************************************
 
-        fill_nondominated_sort(&pop);
+        fill_nondominated_sort(&,);
 
-        // Determine survivor indices using selection operation.
-        // The survivors are moved to the front of the population,
-        // so that the tournament can continue for the remaining elements.
-        for(int j=0; j<params->popsize; j++)
-        {
-            int s = j + tournament_selection(
-                    pop.ind + j, pop.size - j, params->tournsize);
-            // move the selected individual to the front
-            SWAP_LVALUE(Individual, temp, pop.ind[j], pop.ind[s]);
-        }
-        // remove dying individuals -- the survivors are already at the front
-        while (pop.size > params->popsize)
-            free_individual(&pop.ind[--pop.size]);
+//        // Determine survivor indices using selection operation.
+//        // The survivors are moved to the front of the population,
+//        // so that the tournament can continue for the remaining elements.
+//        for(int j=0; j<params->popsize; j++)
+//        {
+//            int s = j + tournament_selection(
+//                    pop.ind + j, pop.size - j, params->tournsize);
+//            // move the selected individual to the front
+//            SWAP_LVALUE(Individual, temp, pop.ind[j], pop.ind[s]);
+//        }
+//        // remove dying individuals -- the survivors are already at the front
+//        while (pop.size > params->popsize)
+//            free_individual(&pop.ind[--pop.size]);
 
         // Place for possible population injection
         if(params->do_pi)
@@ -1158,35 +1183,39 @@ Fitness run_default(struct ea_parameters* params)
             }
         }
         // print statistics of the generation
-        if(params->verbose) 
-            print_stats(&pop, current_generation, nevals, ls_nevals, params->do_localsearch, injected);
+//        if(params->verbose)
+//            print_stats(&pop, current_generation, nevals, ls_nevals, params->do_localsearch, injected);
     }
 
 FINAL_REPORT: ;
 
-    time_t elapsed_time = time(NULL) - run_start_time;
-    if (params->verbose)
-    {
-        printf("Final: ");
-        print_stats(&pop, current_generation, nevals, ls_nevals,
-                params->do_localsearch, injected);
-        printf("Reached %ld evaluations, quitting after %ld seconds\n",
-                nevals, elapsed_time);
-    }
-    if (params->savefname)
-    {
-        write_meta_header(elapsed_time, pi_triggered, params->savefname);
-        write_fitness(fitvals, nevals, params->savefname,
-                params->extended_write);
-    }
-    if (params->genfname)
-    {
-        write_generation_data(gendata, gendatacount, params->genfname);
-    }
+    report_feasible(&pop,fpt3);
+
+//    time_t elapsed_time = time(NULL) - run_start_time;
+//    if (params->verbose)
+//    {
+//        printf("Final: ");
+//        print_stats(&pop, current_generation, nevals, ls_nevals,
+//                params->do_localsearch, injected);
+//        printf("Reached %ld evaluations, quitting after %ld seconds\n",
+//                nevals, elapsed_time);
+//    }
+//    if (params->savefname)
+//    {
+//        write_meta_header(elapsed_time, pi_triggered, params->savefname);
+//        write_fitness(fitvals, nevals, params->savefname,
+//                params->extended_write);
+//    }
+//    if (params->genfname)
+//    {
+//        write_generation_data(gendata, gendatacount, params->genfname);
+//    }
 
     Fitness best_fitness_value = best_fitness_from(fitvals, nevals);
 
     free(gendata);
+    fflush(fpt3);
+    fclose(fpt3);
     cleanup(&pop, &model, fitvals, &diversity);
 
     return best_fitness_value;

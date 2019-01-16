@@ -6,12 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/workspace/MO-monsel/allocate.c
+/home/ubuntu/workspace/MO-monsel/fillnds.c
 stdio.h
 -
 stdlib.h
 -
 math.h
+-
+string.h
 -
 global.h
 /home/ubuntu/workspace/MO-monsel/global.h
@@ -23,6 +25,18 @@ monsel.h
 /home/ubuntu/workspace/MO-monsel/monsel.h
 stdio.h
 -
+
+/home/ubuntu/workspace/MO-monsel/merge.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+global.h
+/home/ubuntu/workspace/MO-monsel/global.h
+rand.h
+/home/ubuntu/workspace/MO-monsel/rand.h
 
 /home/ubuntu/workspace/MO-monsel/monsel.h
 stdint.h

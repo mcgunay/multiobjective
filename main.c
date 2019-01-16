@@ -139,7 +139,7 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
         case 'q': params->genfname = arg; break;
         case 'r': params->random = 1; break;
         case 's': params->seed = arg ? atol(arg) : 42; break;
-        case 't': params->tournsize = arg ? atol(arg) : 5; break;
+        case 't': params->tournsize = arg ? atol(arg) : 2; break;
         case 'u': params->tuning = arg ? atol(arg) : 0; break;
         case 'v': params->verbose = 1; break;
         case 'w': params->savefname = arg; break;

@@ -27,6 +27,8 @@ void copy_ind (Individual *ind1, Individual *ind2)
 {
     int i, j;
     ind2->rank = ind1->rank;
+    ind2->fitness = ind1->fitness;
+    ind2->size = ind1->size;
     ind2->constr_violation = ind1->constr_violation;
     ind2->crowd_dist = ind1->crowd_dist;
     if (nreal!=0)
